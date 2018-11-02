@@ -13,12 +13,28 @@
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.1",
+    "cssnano": "^4.1.7",
+    "install": "^0.12.2",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "npm": "^6.4.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "webpack-cli": "^3.1.2"
+    "sugarss": "^2.0.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
+  "browserslist": [
+    ">0.15%",
+    "not dead"
+  ],
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --hot --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

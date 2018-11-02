@@ -1,3 +1,3 @@
 import SampleFunction from './modules/SampleFunction';
 
-SampleFunction('Simon');
+SampleFunction('Janice');
