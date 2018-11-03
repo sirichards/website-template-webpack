@@ -3,7 +3,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/js/index.js',
     entry: {
         main: [
             path.resolve(__dirname, 'src/scss/main.scss'),
@@ -19,33 +18,32 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    // 'style-loader',
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'postcss-loader',
+                    // 'postcss-loader',
                     'sass-loader'
                 ]
             },
             {
                 test: /\.js$/,
-                exclude: /(node_modules)/,
+                exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
+                    // options: {
+                    //     presets: ['@babel/preset-env']
+                    // }
                 }
             }
         ]
-    },
-    devServer: {
-        contentBase: path.resolve(__dirname, 'build'),
-        watchContentBase: true,
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: '../css/[name].min.css',
         }),
-        new webpack.HotModuleReplacementPlugin()
-    ]
+        // new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        contentBase: './templates'
+    },
 };
